@@ -12,7 +12,7 @@ DIY your own auto watering project step by step
 
 - motor driver DRV8833
 
-![motor driver](/images/driver.png)
+![motor driver](/images/driver.jpg)
 
 - ESP8266 development board D1 mini
 
@@ -37,6 +37,6 @@ DIY your own auto watering project step by step
 
 # 2.  Tools
 
-Paper knife
-Glue gun & sticks
-
+- Paper knife
+- Glue gun
+- packing tape
