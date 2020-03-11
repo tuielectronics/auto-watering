@@ -6,13 +6,28 @@ DIY your own auto watering project step by step
 
 ![mini water pump](/images/pump.jpg)
 
-- Pipe
+- PVC pipe inner D=6mm, outer D=8mm
+
+![mini water pump](/images/pipe.png)
+
 - ESP8266 development board D1 mini
+
+![esp8266](/images/esp8266.jpg)
+
 - Capative moisture sensor
+
+![moisture sensor](/images/moisture.jpg)
+
 - Power bank DIY kit
+
+![moisture sensor](/images/powerbank.png)
+
 - 18650 battery x 1
 - micro USB data cable
 - Jump wires
+
+![moisture sensor](/images/wires.jpg)
+
 - Spring water empty bottle
 
 
@@ -20,4 +35,4 @@ DIY your own auto watering project step by step
 
 Paper knife
 Glue gun & sticks
-Your plant
+
