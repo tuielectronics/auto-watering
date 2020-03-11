@@ -40,3 +40,5 @@ DIY your own auto watering project step by step
 - Paper knife
 - Glue gun
 - packing tape
+- shrinkage tube
+- solder iron / solder
