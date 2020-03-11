@@ -4,7 +4,7 @@ DIY your own auto watering project step by step
 
 - mini water pump x 1
 
-![mini water pump](/images/pump.png)
+![mini water pump](/images/pump.jpg)
 
 - Pipe
 - ESP8266 development board D1 mini
