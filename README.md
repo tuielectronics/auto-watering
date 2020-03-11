@@ -10,6 +10,10 @@ DIY your own auto watering project step by step
 
 ![mini water pump](/images/pipe.png)
 
+- motor driver DRV8833
+
+![motor driver](/images/driver.png)
+
 - ESP8266 development board D1 mini
 
 ![esp8266](/images/esp8266.jpg)
@@ -20,13 +24,13 @@ DIY your own auto watering project step by step
 
 - Power bank DIY kit
 
-![moisture sensor](/images/powerbank.png)
+![power bank](/images/powerbank.png)
 
 - 18650 battery x 1
 - micro USB data cable
 - Jump wires
 
-![moisture sensor](/images/wires.jpg)
+![jump wires](/images/wires.jpg)
 
 - Spring water empty bottle
 
