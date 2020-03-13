@@ -1,5 +1,8 @@
 # auto-watering
 DIY your own auto watering project step by step
+
+![main system](/images/cover.jpg)
+
 # 1.  Bill of Materials
 
 - mini water pump x 1
