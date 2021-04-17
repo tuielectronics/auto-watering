@@ -12,7 +12,9 @@
 <style>
 body {background-color: powderblue;}
 
-
+.highcharts-credits {
+display: none !important;
+}
 </style>
 </head>
 
@@ -23,10 +25,10 @@ body {background-color: powderblue;}
 <p id='mqtt_status' style="color:red;">Cloud Not Connected</p>
 <p id='esp_mac' style="color:blue;">esp8266 is offline</p>
 <input type="radio" id="command1" name="gender" value="1" checked>
-<label for="male">Turn On</label>
+<label for="male">Turn LED On</label>
 <input type="radio" id="command2" name="gender" value="2">
-<label for="female">Turn Off</label>
-<button id="button" type="button" onclick="buttonClicked()">Send command</button><br>
+<label for="female">Turn LED Off</label>
+<button id="button" type="button" onclick="buttonClicked()">Send command</button><br><br>
 
 <div id="container" style="width: 550px; height: 400px; margin: 0 auto"></div>
 
