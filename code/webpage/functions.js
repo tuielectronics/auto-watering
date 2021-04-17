@@ -8,7 +8,7 @@ var mqtt;
 
 console.log('MQTT ID:', mqttID);
 
-
+var espMac = '';
 
 
 //const host = 'wss://m23.cloudmqtt.com:31711'
@@ -36,8 +36,7 @@ const client = mqtt.connect('wss://'+mqttHost+':'+mqttPort, options);
 client.on('error', (err) => {
   console.log('Connection error: ', err);
   client.end();
-  document.getElementById("mqtt_status").innerHTML = 'Cloud Not Connected';
-  document.getElementById("mqtt_status").style.color="red";
+  
 });
 
 client.on('reconnect', () => {
@@ -54,7 +53,11 @@ client.on('connect', () => {
 });
 
 client.on('message', (topic, message, packet) => {
-  //console.log('Received Message: ' , message, '\nOn topic: ' + topic);
+  console.log('Received Message from topic: ' + topic);
+	if(espMac.length==0){
+		espMac = topic.substring(4);
+		document.getElementById("esp_mac").innerHTML = 'esp8266 ' + espMac + ' is online';
+	}
 	if(message.length==8){
 		if(message[0]==="A".charCodeAt(0)){
 			let percentage = message[1]*256+message[2];
@@ -74,11 +77,30 @@ client.on('message', (topic, message, packet) => {
 });
 
 client.on('close', () => {
-  console.log(mqttID + ' disconnected');
+	console.log(mqttID + ' disconnected');
+  
+	document.getElementById("mqtt_status").innerHTML = 'Cloud Not Connected';
+	document.getElementById("mqtt_status").style.color="red";
+  
+	espMac = '';
+	document.getElementById("esp_mac").innerHTML = 'esp8266 is offline';
 });
 
+function buttonClicked() {
+	if(espMac.length>0){
+		var payload = 'A';
+		if(document.getElementById("command1").checked){
+			payload = 'A';
+		}
+		else{
+			payload = 'B';
+		}
+		client.publish('IN/'+espMac, payload, { qos: 0, retain: false })
+	}
+}
 
 var pen;
+
 var chart = {
 	type: 'spline',
 	animation: Highcharts.svg, // don't animate in IE < IE 10.

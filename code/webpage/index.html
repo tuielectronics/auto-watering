@@ -21,7 +21,12 @@ body {background-color: powderblue;}
 
 <h1>My Data Dashboard</h1>
 <p id='mqtt_status' style="color:red;">Cloud Not Connected</p>
-
+<p id='esp_mac' style="color:blue;">esp8266 is offline</p>
+<input type="radio" id="command1" name="gender" value="1" checked>
+<label for="male">Turn On</label>
+<input type="radio" id="command2" name="gender" value="2">
+<label for="female">Turn Off</label>
+<button id="button" type="button" onclick="buttonClicked()">Send command</button><br>
 
 <div id="container" style="width: 550px; height: 400px; margin: 0 auto"></div>
 

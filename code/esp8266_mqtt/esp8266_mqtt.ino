@@ -23,6 +23,15 @@ uint8_t exampleSerialValueIndex = 0;
 uint16_t exampleSerialValue[10] = {10, 20, 25, 40, 60, 90, 99, 75, 34, 22};
 
 void callback(char* topic, byte* payload, unsigned int length) {
+  if(length==1){
+    if(payload[0]=='A'){
+      digitalWrite(2,0);//LED on
+    }
+    else if(payload[0]=='B'){
+      digitalWrite(2,1);//LED off
+    }
+  }
+  
   Serial.print("Message arrived [");
   Serial.print(topic);
   Serial.print("] ");
@@ -30,10 +39,14 @@ void callback(char* topic, byte* payload, unsigned int length) {
     Serial.print((char)payload[i]);
   }
   Serial.println();
+
+
 }
 
 void setup() {
   Serial.begin(115200);
+  pinMode(2, OUTPUT);
+  digitalWrite(2,1);//LED off
   WiFi.mode(WIFI_STA);
   WiFi.begin(ssid, password);
   Serial.printf("\nbegin WiFi - %s\n", ssid);
@@ -56,14 +69,12 @@ void loop() {
   uint32_t t = millis();
   if (t - timeMqttCheck >= 1000) {
     
-
     if (!client.connected()) {
       char mqttID[32];
       snprintf(mqttID, 32, "MQTT-%s-%d", macString, t);
       if (client.connect(mqttID, mqtt_username, mqtt_password)) {
-        
-        
-        client.subscribe("mqttIncomeTopic");
+
+        client.subscribe(mqttInputTopic);
         Serial.printf("mqtt connected, ID = %s, subcribed to %s\n", mqttID, mqttInputTopic);
       }
       else {
